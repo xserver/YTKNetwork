@@ -137,7 +137,7 @@
     self.failureCompletionBlock = failure;
 }
 
-- (void)clearCompletionBlock {
+- (void)clearCallbackBlock {
     // nil out to break the retain cycle.
     self.successCompletionBlock = nil;
     self.failureCompletionBlock = nil;

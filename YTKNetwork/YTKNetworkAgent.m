@@ -202,7 +202,7 @@
 - (void)cancelRequest:(YTKBaseRequest *)request {
     [request.requestOperation cancel];
     [self removeOperation:request.requestOperation];
-    [request clearCompletionBlock];
+    [request clearCallbackBlock];
 }
 
 - (void)cancelAllRequests {
@@ -257,7 +257,7 @@
         }
     }
     [self removeOperation:operation];
-    [request clearCompletionBlock];
+    [request clearCallbackBlock];
 }
 
 - (NSString *)requestHashKey:(AFHTTPRequestOperation *)operation {

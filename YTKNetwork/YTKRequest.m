@@ -185,7 +185,7 @@
     if (strongSelf.successCompletionBlock) {
         strongSelf.successCompletionBlock(strongSelf);
     }
-    [strongSelf clearCompletionBlock];
+    [strongSelf clearCallbackBlock];
 }
 
 - (void)startWithoutCache {

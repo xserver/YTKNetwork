@@ -81,7 +81,7 @@
     self.failureCompletionBlock = failure;
 }
 
-- (void)clearCompletionBlock {
+- (void)clearCallbackBlock {
     // nil out to break the retain cycle.
     self.successCompletionBlock = nil;
     self.failureCompletionBlock = nil;
@@ -114,7 +114,7 @@
         if (_successCompletionBlock) {
             _successCompletionBlock(self);
         }
-        [self clearCompletionBlock];
+        [self clearCallbackBlock];
         [self toggleAccessoriesDidStopCallBack];
     }
 }
@@ -133,7 +133,7 @@
         _failureCompletionBlock(self);
     }
     // Clear
-    [self clearCompletionBlock];
+    [self clearCallbackBlock];
     
     [self toggleAccessoriesDidStopCallBack];
     [[YTKBatchRequestAgent sharedInstance] removeBatchRequest:self];
@@ -143,7 +143,7 @@
     for (YTKRequest * req in _requestArray) {
         [req stop];
     }
-    [self clearCompletionBlock];
+    [self clearCallbackBlock];
 }
 
 #pragma mark - Request Accessoies

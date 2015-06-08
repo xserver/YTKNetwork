@@ -61,7 +61,7 @@
                               failure:(void (^)(YTKBatchRequest *batchRequest))failure;
 
 /// 把block置nil来打破循环引用
-- (void)clearCompletionBlock;
+- (void)clearCallbackBlock;
 
 /// Request Accessory，可以hook Request的start和stop
 - (void)addAccessory:(id<YTKRequestAccessory>)accessory;
